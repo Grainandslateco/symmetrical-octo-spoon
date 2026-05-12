@@ -1,0 +1,58 @@
+{
+  "products": [
+    {
+      "name": "Custom Location Plaque",
+      "type": "Custom Engraving · Wood",
+      "description": "A beautifully detailed engraving of your chosen city or location, set in an ornate wood silhouette. Perfect for housewarming gifts or hometown pride.",
+      "image": "assets/uploads/gift1.jpg"
+    },
+    {
+      "name": "Laser-Cut Wood Clock",
+      "type": "Custom Engraving · Wood",
+      "description": "Custom laser-cut and stained wood wall clock. Fully customizable design — bring any idea to life.",
+      "image": "assets/uploads/gift2.jpg"
+    },
+    {
+      "name": "Friendship Puzzle Plaque",
+      "type": "Gifts Made of Wood",
+      "description": "A heartfelt engraved puzzle piece plaque, perfect for a best friend or chosen family member. Fully customized with your own message.",
+      "image": "assets/uploads/gift3.jpg"
+    },
+    {
+      "name": "Word Art Framed Sign",
+      "type": "Gifts Made of Wood",
+      "description": "Layered word art with engraved script on a linen-style background, finished in a black wood frame. A meaningful gift that lasts.",
+      "image": "assets/uploads/gift4.jpg"
+    },
+    {
+      "name": "Custom Hanging Sign",
+      "type": "Gifts Made of Wood",
+      "description": "A rustic, handcrafted hanging sign engraved with any name, word, or phrase. Suspended on natural rope and ready to hang.",
+      "image": "assets/uploads/gift5.jpg"
+    },
+    {
+      "name": "Geometric Wall Clock",
+      "type": "Gifts Made of Wood",
+      "description": "A striking geometric laser-cut wall clock with bold lines and a sculptural profile. A statement piece for any room.",
+      "image": "assets/uploads/gift6.jpg"
+    },
+    {
+      "name": "Engraved Slate Coasters",
+      "type": "Gifts Made of Stone",
+      "description": "Set of four slate coasters, each individually engraved with a custom design. Perfect as a seasonal or occasion gift set.",
+      "image": "assets/uploads/gift7.jpg"
+    },
+    {
+      "name": "Landscape Coaster Set",
+      "type": "Gifts Made of Stone",
+      "description": "Mixed media coaster set featuring engraved cork rounds and a slate coaster, each with a different landscape scene.",
+      "image": "assets/uploads/gift8.jpg"
+    },
+    {
+      "name": "Custom Photo Coasters",
+      "type": "Gifts Made of Stone",
+      "description": "Custom engraved coasters featuring your chosen photo or image — a personal, practical gift that gets used every day.",
+      "image": "assets/uploads/gift9.jpg"
+    }
+  ]
+}

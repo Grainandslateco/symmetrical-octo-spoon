@@ -1,0 +1,42 @@
+backend:
+  name: git-gateway
+  branch: main
+
+locale: en
+
+# Where uploaded images are stored in the repo
+media_folder: "public/assets/uploads"
+# How images are referenced in content files
+public_folder: "assets/uploads"
+
+collections:
+  - name: "products"
+    label: "My Work"
+    files:
+      - name: "product_list"
+        label: "Product Photos & Descriptions"
+        file: "public/products.json"
+        fields:
+          - name: "products"
+            label: "Products"
+            widget: "list"
+            summary: "{{fields.name}}"
+            minimize_collapsed: true
+            fields:
+              - label: "Product Name"
+                name: "name"
+                widget: "string"
+                hint: "e.g. Custom Coaster Set"
+              - label: "Category"
+                name: "type"
+                widget: "string"
+                hint: "e.g. Gifts Made of Stone"
+              - label: "Description"
+                name: "description"
+                widget: "text"
+                required: false
+                hint: "A short description shown below the photo (optional)."
+              - label: "Photo"
+                name: "image"
+                widget: "image"
+                hint: "Square photos work best. JPG or PNG."

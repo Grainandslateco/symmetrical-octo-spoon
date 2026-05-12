@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grain &amp; Slate Co. | Custom Laser Engraving · Castlegar, BC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!--
+    FORM SETUP REQUIRED — one-time, free:
+    1. Go to https://formspree.io and sign up with woodworkingal@shaw.ca
+    2. Click "New Form", name it "Grain & Slate Order Request"
+    3. Copy your form ID (looks like: xpwzngqb)
+    4. Replace YOUR_FORM_ID below with that ID
+    5. For image attachments: Formspree's free plan supports files up to 5 MB.
+       Upgrade to their "Basic" plan ($10/mo) for larger files.
+  -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cinzel:wght@400;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brown:       #724423;
+      --brown-dark:  #5c3618;
+      --rose:        #ba7e73;
+      --rose-dark:   #a36b60;
+      --rose-deeper: #8f5a50;
+      --cream:       #f7f1eb;
+      --cream-mid:   #ede4d8;
+      --dark:        #2c1a0e;
+      --text:        #3a2211;
+      --text-mid:    #6b4c32;
+      --text-light:  #a07860;
+      --white:       #ffffff;
+      --border:      #ddd0c4;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* ─── NAV ─────────────────────────────────────────── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .nav-top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 40px;
+    }
+
+    .nav-logo {
+      width: 235px;
+      height: 235px;
+      object-fit: contain;
+    }
+
+    .nav-strip {
+      border-top: 1px solid rgba(0,0,0,0.06);
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 38px;
+      padding: 10px 40px;
+    }
+
+    .nav-strip a {
+      text-decoration: none;
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--text);
+      transition: color 0.2s;
+    }
+
+    .nav-strip a:hover { color: var(--rose); }
+
+    /* ─── HERO ────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      height: 560px;
+      overflow: hidden;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 45%;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom,
+        rgba(28,14,4,0.38) 0%,
+        rgba(28,14,4,0.62) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 24px;
+    }
+
+    /* Cinzel 400 — matches the tall, classical Roman letterforms of the logo */
+    .hero-title {
+      font-family: 'Cinzel', serif;
+      font-size: 58px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    /* Pinyon Script — thin, flowing script with minimal flourishes, close to the logo's "laser" lettering */
+    .hero-sub {
+      font-family: 'Pinyon Script', cursive;
+      font-size: 38px;
+      font-weight: 400;
+      color: rgba(255,255,255,1);
+      margin-bottom: 52px;
+      line-height: 1.3;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      padding: 14px 38px;
+      background: var(--rose);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      transition: background 0.2s;
+    }
+
+    .hero-cta:hover { background: var(--rose-dark); }
+
+    .hero-dots {
+      position: absolute;
+      bottom: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+    }
+
+    .hero-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.38);
+    }
+
+    .hero-dot.active { background: var(--white); }
+
+    /* ─── PRODUCTS ────────────────────────────────────── */
+    .products {
+      padding: 84px 40px;
+      background: var(--white);
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 30px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .section-sub {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-mid);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .product-card { cursor: default; }
+
+    .product-card-img-wrap {
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease, opacity 0.2s;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.03);
+      opacity: 0.93;
+    }
+
+    .product-card-body { padding: 14px 2px 0; }
+
+    .product-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 3px;
+    }
+
+    .product-type {
+      font-size: 12px;
+      color: var(--text-light);
+    }
+
+    /* ─── ABOUT BAND ──────────────────────────────────── */
+    /* Background swapped to rose; all text updated for contrast */
+    .about-band {
+      background: var(--rose);
+      padding: 88px 40px;
+      text-align: center;
+    }
+
+    .about-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .about-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 24px;
+    }
+
+    .about-quote {
+      font-size: 20px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.78;
+    }
+
+    .about-sig {
+      margin-top: 28px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.72);
+    }
+
+    /* ─── CONTACT FORM ────────────────────────────────── */
+    .contact {
+      background: var(--cream);
+      padding: 90px 40px;
+    }
+
+    .contact-card {
+      max-width: 620px;
+      margin: 0 auto;
+      background: var(--white);
+      padding: 56px 60px;
+      box-shadow: 0 2px 28px rgba(0,0,0,0.07);
+    }
+
+    .contact-title {
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--text);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .contact-sub {
+      font-size: 14px;
+      color: var(--text-mid);
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+    }
+
+    .form-group label .req {
+      color: var(--rose);
+      margin-left: 2px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid var(--border);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      background: var(--white);
+      outline: none;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+      border-radius: 0;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: var(--rose); }
+
+    .form-group input:invalid:not(:placeholder-shown),
+    .form-group textarea:invalid:not(:placeholder-shown) {
+      border-color: #d9534f;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: #c4b4a6; }
+
+    .form-group textarea {
+      height: 118px;
+      resize: vertical;
+    }
+
+    /* File upload field */
+    .form-group .file-input-wrap {
+      border: 1px dashed var(--border);
+      padding: 14px;
+      background: var(--cream);
+      transition: border-color 0.2s;
+    }
+
+    .form-group .file-input-wrap:focus-within { border-color: var(--rose); }
+
+    .form-group input[type="file"] {
+      border: none;
+      padding: 0;
+      background: transparent;
+      font-size: 13px;
+      color: var(--text-mid);
+      cursor: pointer;
+    }
+
+    .file-hint {
+      font-size: 11px;
+      color: var(--text-light);
+      margin-top: 6px;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 15px;
+      background: var(--rose);
+      color: var(--white);
+      border: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 8px;
+      border-radius: 0;
+    }
+
+    .form-submit:hover { background: var(--rose-dark); }
+    .form-submit:disabled { background: #cba99f; cursor: not-allowed; }
+
+    /* Success / error message */
+    .form-msg {
+      display: none;
+      text-align: center;
+      padding: 16px;
+      margin-top: 16px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .form-msg.success { background: #f0faf0; color: #3a7a3a; border: 1px solid #b8e0b8; }
+    .form-msg.error   { background: #fdf0f0; color: #9a3333; border: 1px solid #e8c0c0; }
+
+    /* ─── CONTACT INFO ROW ────────────────────────────── */
+    .contact-info {
+      max-width: 620px;
+      margin: 38px auto 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 28px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-mid);
+      font-size: 13px;
+      font-weight: 500;
+      padding: 8px 0;
+      transition: color 0.2s;
+    }
+
+    .contact-link:hover { color: var(--rose); }
+
+    .contact-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--cream-mid);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+
+    .contact-link:hover .contact-icon { background: #e0cfc2; }
+
+    .contact-icon svg { width: 17px; height: 17px; }
+
+    /* ─── FOOTER ──────────────────────────────────────── */
+    /* Background swapped to rose; text colours adjusted for contrast */
+    .footer {
+      background: var(--rose);
+      padding: 58px 40px 40px;
+    }
+
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    .footer-col h4 {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .footer-col p {
+      font-size: 13px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .footer-col a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover { color: var(--white); }
+
+    .footer-bottom {
+      max-width: 1080px;
+      margin: 38px auto 0;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-size: 12px;
+      color: rgba(255,255,255,0.65);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* ─── RESPONSIVE ──────────────────────────────────── */
+    @media (max-width: 860px) {
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { grid-template-columns: 1fr; gap: 36px; }
+      .contact-card { padding: 40px 30px; }
+      .nav-logo { width: 174px; height: 174px; }
+    }
+
+    @media (max-width: 600px) {
+      .hero { height: 460px; }
+      .hero-title { font-size: 38px; }
+      .hero-sub { font-size: 26px; }
+      .form-row { grid-template-columns: 1fr; }
+      .nav-strip { gap: 20px; }
+      .contact-info { gap: 8px 16px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .nav-logo { width: 133px; height: 133px; }
+    }
+
+    @media (max-width: 420px) {
+      .products-grid { grid-template-columns: 1fr; }
+      .hero-title { font-size: 30px; }
+      .contact-card { padding: 32px 20px; }
+      .nav-logo { width: 107px; height: 107px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAV ═══════════════════════════════════════════ -->
+  <nav class="nav" role="navigation" aria-label="Main">
+    <div class="nav-top">
+      <img src="../assets/logo.png" alt="Grain &amp; Slate Co." class="nav-logo">
+    </div>
+    <ul class="nav-strip">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#products">My Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ═══ HERO ═══════════════════════════════════════════ -->
+  <section class="hero" id="home" aria-label="Hero">
+    <img src="../assets/hero.jpg" alt="Grain &amp; Slate Co. — custom engraved coasters on rustic wood" class="hero-img">
+    <div class="hero-overlay">
+      <h1 class="hero-title">Grain &amp; Slate Co.</h1>
+      <p class="hero-sub">Thoughtful gifts, beautifully engraved</p>
+      <a href="#contact" class="hero-cta">Request Custom Order</a>
+    </div>
+    <div class="hero-dots" aria-hidden="true">
+      <div class="hero-dot active"></div>
+      <div class="hero-dot"></div>
+      <div class="hero-dot"></div>
+    </div>
+  </section>
+
+  <!-- ═══ PRODUCTS ════════════════════════════════════════ -->
+  <section class="products" id="products" aria-labelledby="products-heading">
+    <div class="section-head">
+      <p class="section-eyebrow">Handcrafted in Castlegar, BC</p>
+      <h2 class="section-title" id="products-heading">My Work</h2>
+      <p class="section-sub">Custom wood &amp; slate pieces, made one order at a time.</p>
+    </div>
+
+    <div class="products-grid">
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="../assets/gift1.jpg" alt="Custom Location Plaque — engraved Castlegar BC">
+        </div>
+        <div class="product-card-body">
+          <p class="product-name">Custom Location Plaque</p>
+          <p class="product-type">Custom Engraving · Wood</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="../assets/gift2.jpg" alt="Laser-Cut Stained Wood Clock">
+        </div>
+        <div class="product-card-body">
+          <p class="product-name">Laser-Cut Wood Clock</p>
+          <p class="product-type">Custom Engraving · Wood</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="../assets/gift3.jpg" alt="Engraved Friendship Puzzle Plaque">
+        </div>
+        <div class="product-card-body">
+          <p class="product-name">Friendship Puzzle Plaque</p>
+          <p class="product-type">Gifts Made of Wood</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="../assets/gift4.jpg" alt="Sister — Word Art Framed Wood Sign">
+        </div>
+        <div class="product-card-body">
+          <p class="product-name">Word Art Framed Sign</p>
+          <p class="product-type">Gifts Made of Wood</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="../assets/gift5.jpg" alt="Rustic Hanging Wood Sign">
+        </div>
+        <div class="product-card-body">
+          <p class="product-name">Custom Hanging Sign</p>
+          <p class="product-type">Gifts Made of Wood</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="../assets/gift6.jpg" alt="Geometric Laser-Cut Wall Clock">
+        </div>
+        <div class="product-card-body">
+          <p class="product-name">Geometric Wall Clock</p>
+          <p class="product-type">Gifts Made of Wood</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="../assets/gift7.jpg" alt="Engraved Slate Coaster Set — seasonal designs">
+        </div>
+        <div class="product-card-body">
+          <p class="product-name">Engraved Slate Coasters</p>
+          <p class="product-type">Gifts Made of Stone</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="../assets/gift8.jpg" alt="Landscape Engraved Cork and Slate Coaster Set">
+        </div>
+        <div class="product-card-body">
+          <p class="product-name">Landscape Coaster Set</p>
+          <p class="product-type">Gifts Made of Stone</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="../assets/gift9.jpg" alt="Custom Animal Engraved Coaster Set">
+        </div>
+        <div class="product-card-body">
+          <p class="product-name">Custom Photo Coasters</p>
+          <p class="product-type">Gifts Made of Stone</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ ABOUT BAND ══════════════════════════════════════ -->
+  <section class="about-band" id="about" aria-labelledby="about-heading">
+    <div class="about-inner">
+      <p class="about-eyebrow" id="about-heading">About Grain &amp; Slate</p>
+      <p class="about-quote">"Grain &amp; Slate — just me, a laser, and a lot of ideas. Custom wood &amp; slate pieces made one order at a time. Gifts, signs &amp; little things that matter."</p>
+      <p class="about-sig">Castlegar, BC &nbsp;&middot;&nbsp; grainandslateco.ca</p>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT FORM ════════════════════════════════════ -->
+  <!--
+    REPLACE "YOUR_FORM_ID" with your Formspree form ID.
+    See setup instructions in the <head> comment above.
+  -->
+  <section class="contact" id="contact" aria-labelledby="contact-heading">
+
+    <div class="contact-card">
+      <h2 class="contact-title" id="contact-heading">Request Custom Order</h2>
+      <p class="contact-sub">Tell me what you have in mind. I'll get back to you within 1–2 business days.</p>
+
+      <form
+        id="order-form"
+        action="https://formspree.io/f/YOUR_FORM_ID"
+        method="POST"
+        enctype="multipart/form-data"
+        novalidate
+      >
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="first_name" placeholder="Jane">
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="last_name" placeholder="Smith">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" placeholder="jane@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 000 000 0000">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="item">What Would You Like?</label>
+          <input type="text" id="item" name="item" placeholder="e.g. Engraved coaster set, custom wall sign, gift plaque…">
+        </div>
+
+        <div class="form-group">
+          <label for="message">Details &amp; Ideas</label>
+          <textarea id="message" name="message" placeholder="Size, design, occasion — the more detail, the better."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="images">Reference Images (optional)</label>
+          <div class="file-input-wrap">
+            <input
+              type="file"
+              id="images"
+              name="images"
+              accept="image/*"
+              multiple
+            >
+          </div>
+          <p class="file-hint">Attach photos, sketches, or inspiration images. JPG, PNG, GIF — up to 5 MB each.</p>
+        </div>
+
+        <button type="submit" class="form-submit" id="submit-btn">Send Request</button>
+        <div class="form-msg" id="form-msg" role="alert"></div>
+      </form>
+    </div>
+
+    <div class="contact-info" aria-label="Contact details">
+
+      <a href="tel:+12503048302" class="contact-link">
+        <div class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#724423" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.49 13a19.79 19.79 0 01-3.07-8.67A2 2 0 012.4 2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.29 6.29l1.29-1.29a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+        </div>
+        +1 250 304 8302
+      </a>
+
+      <a href="mailto:woodworkingal@shaw.ca" class="contact-link">
+        <div class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#724423" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        woodworkingal@shaw.ca
+      </a>
+
+      <a href="https://grainandslateco.ca" target="_blank" rel="noopener" class="contact-link">
+        <div class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#724423" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+          </svg>
+        </div>
+        grainandslateco.ca
+      </a>
+
+      <a href="https://www.facebook.com/grainandslateco" target="_blank" rel="noopener" class="contact-link">
+        <div class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="#724423">
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+          </svg>
+        </div>
+        Facebook
+      </a>
+
+      <a href="https://www.instagram.com/grainandslateco" target="_blank" rel="noopener" class="contact-link">
+        <div class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#724423" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+        </div>
+        @grainandslateco
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <div class="footer-col">
+        <h4>About Our Store</h4>
+        <p>Grain &amp; Slate Co. creates custom wood &amp; slate pieces, handcrafted and laser engraved in Castlegar, BC. Made one order at a time, with care for every detail.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">My Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Request Custom Order</a></li>
+          <li><a href="https://grainandslateco.ca" target="_blank" rel="noopener">grainandslateco.ca</a></li>
+          <li><a href="https://www.facebook.com/grainandslateco" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.instagram.com/grainandslateco" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2025 Grain &amp; Slate Co. &nbsp;&middot;&nbsp; Castlegar, BC</span>
+      <span>woodworkingal@shaw.ca &nbsp;&middot;&nbsp; +1 250 304 8302</span>
+    </div>
+  </footer>
+
+  <script>
+    // Intercept form submit — validate email, then post to Formspree via fetch
+    // so the page never navigates away and we can show a success/error message.
+    const form    = document.getElementById('order-form');
+    const btn     = document.getElementById('submit-btn');
+    const msg     = document.getElementById('form-msg');
+    const emailEl = document.getElementById('email');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      // Email is required — validate before sending
+      if (!emailEl.value.trim()) {
+        emailEl.focus();
+        showMsg('error', 'Please enter your email address before submitting.');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      msg.style.display = 'none';
+      msg.className = 'form-msg';
+
+      try {
+        const data = new FormData(form);
+        const res  = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          showMsg('success', 'Your request has been sent. I\'ll be in touch within 1–2 business days.');
+          form.reset();
+        } else {
+          // Formspree returns JSON errors on failure
+          const json = await res.json().catch(() => ({}));
+          const err  = json.errors ? json.errors.map(e => e.message).join(', ') : 'Something went wrong.';
+          showMsg('error', err);
+        }
+      } catch (_) {
+        showMsg('error', 'Unable to send — please check your connection and try again, or email woodworkingal@shaw.ca directly.');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Send Request';
+      }
+    });
+
+    function showMsg(type, text) {
+      msg.className = 'form-msg ' + type;
+      msg.textContent = text;
+      msg.style.display = 'block';
+      msg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // Match subheading width to heading width via binary-search on letter-spacing.
+    // Runs after fonts load and re-runs on resize so it stays correct at every viewport.
+    function matchSubWidth() {
+      const title = document.querySelector('.hero-title');
+      const sub   = document.querySelector('.hero-sub');
+      if (!title || !sub) return;
+
+      const target = title.offsetWidth;
+      let lo = -2, hi = 40, mid;
+
+      for (let i = 0; i < 30; i++) {
+        mid = (lo + hi) / 2;
+        sub.style.letterSpacing = mid + 'px';
+        if (sub.offsetWidth < target) lo = mid;
+        else hi = mid;
+      }
+      sub.style.letterSpacing = mid + 'px';
+    }
+
+    document.fonts.ready.then(matchSubWidth);
+    window.addEventListener('resize', matchSubWidth);
+  </script>
+
+</body>
+</html>

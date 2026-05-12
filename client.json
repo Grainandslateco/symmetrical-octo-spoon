@@ -1,0 +1,15 @@
+{
+  "company_name": "Grain & Slate Co.",
+  "tagline": "Thoughtful gifts, beautifully engraved",
+  "about": "Grain & Slate — just me, a laser, and a lot of ideas. Custom wood & slate pieces made one order at a time. Gifts, signs & little things that matter. DM for custom work.",
+  "services": ["Custom Engraving", "Gifts Made of Wood", "Gifts Made of Stone"],
+  "phone": "+1 250 304 8302",
+  "email": "woodworkingal@shaw.ca",
+  "address": "Castlegar, BC",
+  "logo_path": "./assets/logo.png",
+  "primary_colour": "#724423",
+  "secondary_colour": "#ba7e73",
+  "font": "Inter",
+  "cta_label": "Request Custom Order",
+  "cta_link": "mailto:woodworkingal@shaw.ca"
+}
