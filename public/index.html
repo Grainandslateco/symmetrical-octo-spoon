@@ -42,11 +42,7 @@
 
     /* ─── NAV ─────────────────────────────────────────── */
     .nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
       background: var(--white);
-      border-bottom: 1px solid rgba(0,0,0,0.08);
     }
 
     .nav-top {
@@ -60,10 +56,16 @@
       width: 235px;
       height: 235px;
       object-fit: contain;
+      will-change: transform;
     }
 
     .nav-strip {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
       border-top: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
       display: flex;
       justify-content: center;
       list-style: none;
@@ -802,6 +804,23 @@
     }
 
     loadProducts();
+
+    // ─── Logo parallax ───────────────────────────────────
+    (function initLogoParallax() {
+      const logo = document.querySelector('.nav-logo');
+      if (!logo) return;
+      let rafId = null;
+      function update() {
+        const y = window.scrollY;
+        logo.style.transform = `translateY(${-(y * 0.5)}px)`;
+        logo.style.opacity   = Math.max(0, 1 - y / 180);
+        rafId = null;
+      }
+      window.addEventListener('scroll', () => {
+        if (!rafId) rafId = requestAnimationFrame(update);
+      }, { passive: true });
+      update();
+    })();
 
     // ─── Match subheading width to heading ────────────────
     function matchSubWidth() {
