@@ -53,6 +53,12 @@
       "type": "Gifts Made of Stone",
       "description": "Custom engraved coasters featuring your chosen photo or image — a personal, practical gift that gets used every day.",
       "image": "assets/uploads/gift9.jpg"
+    },
+    {
+      "image": "assets/uploads/photoroom_20260514_114115.jpeg",
+      "name": "Eagle Tree Wall-hanging",
+      "type": "Wall-hanging",
+      "description": "Eagle Tree Wall-hanging Gold on Black"
     }
   ]
 }
